@@ -35,7 +35,103 @@
    <shared_objects_file/>
   <entries>
     <entry>
-      <name>Trasformazione studenti</name>
+      <name>START</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>Y</start>
+      <dummy>N</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>48</xloc>
+      <yloc>224</yloc>
+      </entry>
+    <entry>
+      <name>Successo</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>544</xloc>
+      <yloc>224</yloc>
+      </entry>
+    <entry>
+      <name>Trasformazione Tempo</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;tempo.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
+      <yloc>32</yloc>
+      </entry>
+    <entry>
+      <name>Trasformazione Anni Accademici</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;anni_accademici.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
+      <yloc>112</yloc>
+      </entry>
+    <entry>
+      <name>Trasformazione Studenti</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -64,31 +160,11 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>48</yloc>
-      </entry>
-    <entry>
-      <name>START</name>
-      <description/>
-      <type>SPECIAL</type>
-      <start>Y</start>
-      <dummy>N</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>48</xloc>
+      <xloc>304</xloc>
       <yloc>192</yloc>
       </entry>
     <entry>
-      <name>Trasformazione tipi immatricolazione</name>
+      <name>Trasformazione Tipi Immatricolazione</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -117,11 +193,11 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>144</yloc>
+      <xloc>304</xloc>
+      <yloc>272</yloc>
       </entry>
     <entry>
-      <name>Trasformazione corsi</name>
+      <name>Trasformazione Corsi</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -150,11 +226,11 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>240</yloc>
+      <xloc>304</xloc>
+      <yloc>368</yloc>
       </entry>
     <entry>
-      <name>Trasformazione corsi di studio</name>
+      <name>Trasformazione Corsi di Studio</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -183,24 +259,14 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>336</yloc>
-      </entry>
-    <entry>
-      <name>Successo</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>528</xloc>
-      <yloc>192</yloc>
+      <xloc>304</xloc>
+      <yloc>464</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>Trasformazione studenti</to>
+      <to>Trasformazione Tempo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -209,7 +275,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Trasformazione tipi immatricolazione</to>
+      <to>Trasformazione Anni Accademici</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -218,7 +284,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Trasformazione corsi</to>
+      <to>Trasformazione Studenti</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -227,7 +293,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Trasformazione corsi di studio</to>
+      <to>Trasformazione Tipi Immatricolazione</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -235,7 +301,25 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Trasformazione studenti</from>
+      <from>START</from>
+      <to>Trasformazione Corsi</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Trasformazione Corsi di Studio</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Trasformazione Tempo</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -244,7 +328,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Trasformazione tipi immatricolazione</from>
+      <from>Trasformazione Anni Accademici</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -253,7 +337,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Trasformazione corsi</from>
+      <from>Trasformazione Studenti</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -262,7 +346,25 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Trasformazione corsi di studio</from>
+      <from>Trasformazione Tipi Immatricolazione</from>
+      <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Trasformazione Corsi</from>
+      <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Trasformazione Corsi di Studio</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -272,27 +374,6 @@
     </hop>
   </hops>
   <notepads>
-    <notepad>
-      <note>le restanti dimensioni &#x28;tempo e anno accademico&#x29; sono popolate &#x28;dal 2006 al 2018&#x29; con la query sql che crea il database.</note>
-      <xloc>96</xloc>
-      <yloc>416</yloc>
-      <width>642</width>
-      <heigth>26</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
 
 </job>

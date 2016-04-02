@@ -41,19 +41,7 @@ CREATE TABLE anno_accademico (
   nome_anno_x_1_x VARCHAR(20)
 );
 INSERT INTO anno_accademico (codice_anno, nome_anno_x, nome_anno_x_1, nome_anno_x_1_x)
-    VALUES (0, '0', '0', '0/0'),
-		   (20062007, '2007', '2006', '2006/2007'),
-		   (20072008, '2008', '2007', '2007/2008'),
-		   (20082009, '2009', '2008', '2008/2009'),
-		   (20092010, '2010', '2009', '2009/2010'),
-		   (20102011, '2011', '2010', '2010/2011'), 
-		   (20112012, '2012', '2011', '2011/2012'), 
-		   (20122013, '2013', '2012', '2012/2013'), 
-		   (20132014, '2014', '2013', '2013/2014'), 
-		   (20142015, '2015', '2014', '2014/2015'),
-		   (20152016, '2016', '2015', '2015/2016'),
-		   (20162017, '2017', '2016', '2016/2017'),
-		   (20172018, '2018', '2017', '2017/2018');
+    VALUES (0, '0', '0', '0/0');
 
 CREATE TABLE corso_di_studi (
   cds_key SERIAL PRIMARY KEY NOT NULL,
@@ -124,6 +112,7 @@ CREATE TABLE tipo_uscita (
   tipo_uscita VARCHAR(70)
 );
 
+/*
 CREATE TABLE tempo AS SELECT
 	datum AS DATE,
 	EXTRACT(YEAR FROM datum) AS YEAR,
@@ -192,6 +181,39 @@ ALTER TABLE tempo ALTER COLUMN DateTypeDate TYPE DATE USING to_date(DateTypeDate
 ALTER TABLE tempo ALTER COLUMN anno TYPE DATE USING to_date(anno, 'yyyy');
 ALTER TABLE tempo ALTER COLUMN mese TYPE DATE USING to_date(mese, 'mm');
 ALTER TABLE tempo ALTER COLUMN giorno TYPE DATE USING to_date(giorno, 'dd');
+*/
+
+CREATE TABLE tempo (
+    tempo_key SERIAL PRIMARY KEY NOT NULL
+    date date,
+    year double precision,
+    month double precision,
+    monthname text,
+    day double precision,
+    dayofyear double precision,
+    weekdayname text,
+    calendarweek double precision,
+    pentahodate text,
+    formatteddate text,
+    datetypedate date,
+    quartal text,
+    yearquartal text,
+    yearmonth text,
+    yearonly text,
+    anno date,
+    mese date,
+    giorno date,
+    yearcalendarweek text,
+    weekend text,
+    americanholiday text,
+    austrianholiday text,
+    canadianholiday text,
+    period text,
+    cwstart date,
+    cwend date,
+    monthstart date,
+    monthend timestamp without time zone
+);
 
 CREATE TABLE ingressi (
   studente SERIAL REFERENCES studente (studente_key),

@@ -273,6 +273,35 @@
     </step>
 
   <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Add sequence</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>nome_corso</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text/><length>-1</length><precision>-1</precision><isnull>Y</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>880</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Filtro valori inutili</name>
     <type>SelectValues</type>
     <description/>
@@ -315,7 +344,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_SETTORI_DISCIPLINARI.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_SETTORI_DISCIPLINARI.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -393,7 +422,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_6_20160129_110238.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_6_20160129_110238.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -625,7 +654,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_6_20160129_121124.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_6_20160129_121124.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -857,7 +886,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_6_20160224_134831.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_6_20160224_134831.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1147,7 +1176,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;ad.csv</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;ad.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1219,7 +1248,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;ad.xlsx</name>
+      <name>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;ad.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1305,35 +1334,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>544</xloc>
       <yloc>400</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Add sequence</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>nome_corso</leftvalue>
- <function>&#x3c;&#x3e;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text/><length>-1</length><precision>-1</precision><isnull>Y</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>880</xloc>
-      <yloc>640</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

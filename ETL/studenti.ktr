@@ -492,7 +492,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_COMUNI.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_COMUNI.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -625,7 +625,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_NAZIONI.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_NAZIONI.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -703,7 +703,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_SCUOLE_SUPERIORI.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_SCUOLE_SUPERIORI.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -924,7 +924,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_SESSO.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_SESSO.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -980,7 +980,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_TITOLI_DIPLOMA.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_TITOLI_DIPLOMA.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1058,7 +1058,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_VOTI_DIPLOMA.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_VOTI_DIPLOMA.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1114,7 +1114,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_1_20160127_143031.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_1_20160127_143031.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1522,7 +1522,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_1_20160127_120000.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_1_20160127_120000.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1930,7 +1930,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_1_20160127_153020.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_1_20160127_153020.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2525,177 +2525,6 @@
     </step>
 
   <step>
-    <name>ddMMyyyy</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>Codice fiscale evento</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Evento</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Data Evento</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Codice Fiscale</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Sesso</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Comune nascita</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Data nascita</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Stato nascita</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Data prima immatricolazione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Anno prima immatricolazione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Cittadinanza</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Stato di residenza</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Comune residenza</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Tipo ingresso</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Chiave corso</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Esito test ingresso</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>CFU Validi per il Corso</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Debiti accertati</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Anno iscrizione corso</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Lavoratore</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Impegno</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Piano Studi Individuale</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Borsa di studio</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Esenzione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Esonero totale o parziale</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Contributi dovuti</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Contributi pagati</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Interventi di supporto</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Descrizione interventi di supporto</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Titolo di studio diploma</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Istituto diploma</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Anno diploma</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Votazione diploma</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Nazione diploma</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>Data nascita</name>
-        <rename>Data nascita</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>ddMMyyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>656</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>data int to string</name>
     <type>SelectValues</type>
     <description/>
@@ -2862,6 +2691,177 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>752</xloc>
       <yloc>224</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>ddMMyyyy</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Codice fiscale evento</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Evento</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Data Evento</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Codice Fiscale</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Sesso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Comune nascita</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Data nascita</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Stato nascita</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Data prima immatricolazione</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Anno prima immatricolazione</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Cittadinanza</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Stato di residenza</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Comune residenza</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Tipo ingresso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Chiave corso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Esito test ingresso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CFU Validi per il Corso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Debiti accertati</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Anno iscrizione corso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Lavoratore</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Impegno</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Piano Studi Individuale</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Borsa di studio</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Esenzione</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Esonero totale o parziale</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Contributi dovuti</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Contributi pagati</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Interventi di supporto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Descrizione interventi di supporto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Titolo di studio diploma</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Istituto diploma</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Anno diploma</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Votazione diploma</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Nazione diploma</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>Data nascita</name>
+        <rename>Data nascita</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>ddMMyyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>656</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

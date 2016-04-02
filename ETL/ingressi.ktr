@@ -73,27 +73,6 @@
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
-    <notepad>
-      <note>trasformo i valori superiori a 100 &#x28;es 998&#x29; in valori inferiori a 100 &#x28;es 99&#x29;</note>
-      <xloc>592</xloc>
-      <yloc>1040</yloc>
-      <width>378</width>
-      <heigth>26</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
   <connection>
     <name>Postgres</name>
@@ -127,168 +106,21 @@
   <hop> <from>Import Spedizione 1 2014</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>data int to string</from><to>padding data</to><enabled>Y</enabled> </hop>
   <hop> <from>padding data</from><to>filtro evento IN, AC, IS</to><enabled>Y</enabled> </hop>
-  <hop> <from>Studente</from><to>selezione e conversione</to><enabled>Y</enabled> </hop>
-  <hop> <from>selezione e conversione</from><to>Studente Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro evento IN, AC, IS</from><to>Studente Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Anno Accademico</from><to>selezione e conversione 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Anno Accademico Lookup</from><to>Corso di Studi Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>selezione e conversione 2</from><to>Anno Accademico Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Corso di Studi</from><to>selezione e conversione 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>Corso di Studi Lookup</from><to>Tempo Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>selezione e conversione 4</from><to>Corso di Studi Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Tempo</from><to>selezione e conversione 5</to><enabled>Y</enabled> </hop>
-  <hop> <from>selezione e conversione 5</from><to>Tempo Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro studente non null</from><to>Anno Accademico Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Studente Lookup</from><to>filtro studente non null</to><enabled>Y</enabled> </hop>
-  <hop> <from>Tipo Immatricolazione</from><to>selezione e conversione 6</to><enabled>Y</enabled> </hop>
-  <hop> <from>selezione e conversione 6</from><to>Immatricolazione Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Tempo Lookup</from><to>Immatricolazione Lookup</to><enabled>Y</enabled> </hop>
   <hop> <from>Selezione dati utili</from><to>filtro tempo non null</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro cds non null</from><to>filtro anno accademico non null</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro tempo non null</from><to>filtro cds non null</to><enabled>Y</enabled> </hop>
-  <hop> <from>Immatricolazione Lookup</from><to>Selezione dati utili</to><enabled>N</enabled> </hop>
-  <hop> <from>Immatricolazione Lookup</from><to>immatricolato &#x28;sempre 1&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>immatricolato &#x28;sempre 1&#x29;</from><to>Selezione dati utili</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro anno accademico non null</from><to>filtro tipo immatricolazione non null</to><enabled>Y</enabled> </hop>
-  <hop> <from>Punteggio &#x3e; 100&#x3f;</from><to>int-&#x3e;str</to><enabled>Y</enabled> </hop>
-  <hop> <from>int-&#x3e;str</from><to>prime 3 cifre</to><enabled>Y</enabled> </hop>
-  <hop> <from>prime 3 cifre</from><to>str-&#x3e;int</to><enabled>Y</enabled> </hop>
-  <hop> <from>genera 10</from><to>punteggio&#x2f;10</to><enabled>Y</enabled> </hop>
-  <hop> <from>str-&#x3e;int</from><to>genera 10</to><enabled>Y</enabled> </hop>
-  <hop> <from>punteggio&#x2f;10</from><to>Selezione dati utili 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Punteggio &#x3e; 100&#x3f;</from><to>Selezione dati utili 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Selezione dati utili 2</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Selezione dati utili 3</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>N</enabled> </hop>
-  <hop> <from>filtro tipo immatricolazione non null</from><to>rimozione del 998 o no&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>rimozione del 998 o no&#x3f;</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>rimozione del 998 o no&#x3f;</from><to>Punteggio &#x3e; 100&#x3f;</to><enabled>N</enabled> </hop>
+  <hop> <from>filtro tipo immatricolazione non null</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro studente non null</from><to>Database lookup anno accademico</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup studente</from><to>filtro studente non null</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup cds</from><to>Database lookup tempo</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro evento IN, AC, IS</from><to>Database lookup studente</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup anno accademico</from><to>Database lookup cds</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup tempo</from><to>Database lookup tipo immatricolazione</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup tipo immatricolazione</from><to>immatricolato &#x28;sempre 1&#x29;</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Anno Accademico</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>Postgres</connection>
-    <sql>SELECT aa_key, nome_anno_x_1 FROM anno_accademico</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>592</xloc>
-      <yloc>832</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Anno Accademico Lookup</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <from>selezione e conversione 2</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>Y</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>Anno prima immatricolazione</name>
-        <field>nome_anno_x_1</field>
-      </key>
-      <value>
-        <name>aa_key</name>
-        <rename>anno_accademico</rename>
-        <default/>
-        <type>None</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>592</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Corso di Studi</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>Postgres</connection>
-    <sql>SELECT cds_key, codice_cds FROM corso_di_studi&#xd;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
-      <yloc>832</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Corso di Studi Lookup</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <from>selezione e conversione 4</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>Chiave corso</name>
-        <field>codice_cds</field>
-      </key>
-      <value>
-        <name>cds_key</name>
-        <rename>corso_di_studi</rename>
-        <default/>
-        <type>None</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Dummy &#x28;do nothing&#x29;</name>
     <type>Dummy</type>
@@ -309,42 +141,6 @@
     </step>
 
   <step>
-    <name>Immatricolazione Lookup</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <from>selezione e conversione 6</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>Tipo ingresso</name>
-        <field>immatricolazione_key_surrogata</field>
-      </key>
-      <value>
-        <name>immatricolazione_key</name>
-        <rename>tipo_immatricolazione</rename>
-        <default/>
-        <type>None</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>992</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Import Spedizione 1 2012</name>
     <type>CsvInput</type>
     <description/>
@@ -355,7 +151,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_1_20160127_143031.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_1_20160127_143031.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -763,7 +559,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_1_20160127_120000.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_1_20160127_120000.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1171,7 +967,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_1_20160127_153020.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_1_20160127_153020.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1641,8 +1437,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>784</xloc>
-      <yloc>1312</yloc>
+      <xloc>560</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1696,156 +1492,6 @@
     </step>
 
   <step>
-    <name>Studente</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>Postgres</connection>
-    <sql>SELECT studente_key, codice_fiscale FROM studente</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
-      <yloc>720</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Studente Lookup</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <from>selezione e conversione</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>Codice fiscale evento</name>
-        <field>codice_fiscale</field>
-      </key>
-      <value>
-        <name>studente_key</name>
-        <rename>studente</rename>
-        <default/>
-        <type>None</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
-      <yloc>448</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Tempo</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>Postgres</connection>
-    <sql>SELECT pentahodate,tempo_key FROM tempo</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>864</xloc>
-      <yloc>832</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Tempo Lookup</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <from>selezione e conversione 5</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>Data Evento</name>
-        <field>pentahodate</field>
-      </key>
-      <value>
-        <name>tempo_key</name>
-        <rename>tempo</rename>
-        <default/>
-        <type>None</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>864</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Tipo Immatricolazione</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>Postgres</connection>
-    <sql>SELECT immatricolazione_key, immatricolazione_key_surrogata FROM tipo_immatricolazione&#xd;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>992</xloc>
-      <yloc>832</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Unique rows &#x28;HashSet&#x29;</name>
     <type>UniqueRowsByHashSet</type>
     <description/>
@@ -1864,8 +1510,8 @@
         </field>      <field>        <name>anno_accademico</name>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>784</xloc>
-      <yloc>1184</yloc>
+      <xloc>560</xloc>
+      <yloc>672</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2064,8 +1710,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1152</xloc>
-      <yloc>944</yloc>
+      <xloc>752</xloc>
+      <yloc>560</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2093,8 +1739,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1152</xloc>
-      <yloc>832</yloc>
+      <xloc>912</xloc>
+      <yloc>560</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2110,7 +1756,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Studente Lookup</send_true_to>
+<send_true_to>Database lookup studente</send_true_to>
 <send_false_to/>
     <compare>
 <condition>
@@ -2148,35 +1794,6 @@
     </step>
 
   <step>
-    <name>filtro studente non null</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Anno Accademico Lookup</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>studente</leftvalue>
- <function>&#x3c;&#x3e;</function>
- <rightvalue/>
- <value><name>constant</name><type>Integer</type><text/><length>-1</length><precision>0</precision><isnull>Y</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>592</xloc>
-      <yloc>448</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>filtro tempo non null</name>
     <type>FilterRows</type>
     <description/>
@@ -2199,8 +1816,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1152</xloc>
-      <yloc>688</yloc>
+      <xloc>1040</xloc>
+      <yloc>560</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2216,7 +1833,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>rimozione del 998 o no&#x3f;</send_true_to>
+<send_true_to>Unique rows &#x28;HashSet&#x29;</send_true_to>
 <send_false_to/>
     <compare>
 <condition>
@@ -2228,8 +1845,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1152</xloc>
-      <yloc>1072</yloc>
+      <xloc>560</xloc>
+      <yloc>560</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2261,8 +1878,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1072</xloc>
-      <yloc>480</yloc>
+      <xloc>1152</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2302,282 +1919,7 @@
     </step>
 
   <step>
-    <name>selezione e conversione</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>studente_key</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>codice_fiscale</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>studente_key</name>
-        <rename>studente_key</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>selezione e conversione 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>aa_key</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>nome_anno_x_1</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>aa_key</name>
-        <rename>aa_key</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>nome_anno_x_1</name>
-        <rename>nome_anno_x_1</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>592</xloc>
-      <yloc>704</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>selezione e conversione 4</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>cds_key</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>codice_cds</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>codice_cds</name>
-        <rename>codice_cds</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>cds_key</name>
-        <rename>cds_key</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
-      <yloc>688</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>selezione e conversione 5</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>pentahodate</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tempo_key</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>pentahodate</name>
-        <rename>pentahodate</rename>
-        <type>String</type>
-        <length>8</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>tempo_key</name>
-        <rename>tempo_key</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>864</xloc>
-      <yloc>704</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>selezione e conversione 6</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>immatricolazione_key_surrogata</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>immatricolazione_key</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>immatricolazione_key_surrogata</name>
-        <rename>immatricolazione_key_surrogata</rename>
-        <type>String</type>
-        <length>1</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>immatricolazione_key</name>
-        <rename>immatricolazione_key</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>992</xloc>
-      <yloc>672</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Punteggio &#x3e; 100&#x3f;</name>
+    <name>filtro studente non null</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -2587,60 +1929,27 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>int-&#x3e;str</send_true_to>
-<send_false_to>Selezione dati utili 3</send_false_to>
+<send_true_to>Database lookup anno accademico</send_true_to>
+<send_false_to/>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>punteggio_test</leftvalue>
- <function>&#x3e;</function>
+ <leftvalue>studente</leftvalue>
+ <function>&#x3c;&#x3e;</function>
  <rightvalue/>
- <value><name>constant</name><type>Integer</type><text>100</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+ <value><name>constant</name><type>Integer</type><text/><length>-1</length><precision>0</precision><isnull>Y</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>992</xloc>
-      <yloc>976</yloc>
+      <xloc>816</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>genera 10</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>dieci</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>10</nullif>
-        <length>-1</length>
-        <precision>0</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>656</xloc>
-      <yloc>976</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>prime 3 cifre</name>
-    <type>StringCut</type>
+    <name>Database lookup studente</name>
+    <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2649,25 +1958,124 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>punteggio_test</in_stream_name>
-        <out_stream_name/>
-        <cut_from>0</cut_from>
-        <cut_to>3</cut_to>
-      </field>
-    </fields>
+    <connection>Postgres</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>ava</schema>
+      <table>studente</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>Codice fiscale evento</name>
+        <field>codice_fiscale</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>studente_key</name>
+        <rename>studente</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Database lookup anno accademico</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Postgres</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>ava</schema>
+      <table>anno_accademico</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>Anno prima immatricolazione</name>
+        <field>nome_anno_x_1</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>aa_key</name>
+        <rename>anno_accademico</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Database lookup cds</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Postgres</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>ava</schema>
+      <table>corso_di_studi</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>Chiave corso</name>
+        <field>codice_cds</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>cds_key</name>
+        <rename>corso_di_studi</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>816</xloc>
-      <yloc>976</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>int-&#x3e;str</name>
-    <type>SelectValues</type>
+    <name>Database lookup tempo</name>
+    <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2676,157 +2084,40 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>studente</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>anno_accademico</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>corso_di_studi</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tempo</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tipo_immatricolazione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>punteggio_test</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>immatricolato</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>punteggio_test</name>
-        <rename>punteggio_test</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
-      <yloc>976</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>str-&#x3e;int</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>studente</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>anno_accademico</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>corso_di_studi</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tempo</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tipo_immatricolazione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>punteggio_test</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>immatricolato</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>punteggio_test</name>
-        <rename>punteggio_test_p</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>&#x23;</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
-      <yloc>976</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>punteggio&#x2f;10</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>punteggio_test</field_name>
-<calc_type>DIVIDE</calc_type>
-<field_a>punteggio_test_p</field_a>
-<field_b>dieci</field_b>
-<field_c/>
-<value_type>Integer</value_type>
-<value_length>-1</value_length>
-<value_precision>0</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
+    <connection>Postgres</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>ava</schema>
+      <table>tempo</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>Data Evento</name>
+        <field>pentahodate</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>tempo_key</name>
+        <rename>tempo</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>560</xloc>
-      <yloc>976</yloc>
+      <xloc>960</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Selezione dati utili 2</name>
-    <type>SelectValues</type>
+    <name>Database lookup tipo immatricolazione</name>
+    <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2835,155 +2126,33 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>studente</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>anno_accademico</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>corso_di_studi</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tempo</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tipo_immatricolazione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>punteggio_test</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>immatricolato</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>punteggio_test</name>
-        <rename>punteggio_test</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type>normal</storage_type>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>560</xloc>
-      <yloc>1088</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Selezione dati utili 3</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>studente</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>anno_accademico</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>corso_di_studi</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tempo</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tipo_immatricolazione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>punteggio_test</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>immatricolato</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>punteggio_test</name>
-        <rename>punteggio_test</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type>normal</storage_type>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>992</xloc>
-      <yloc>1088</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29; 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <connection>Postgres</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>ava</schema>
+      <table>tipo_immatricolazione</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>Tipo ingresso</name>
+        <field>immatricolazione_key_surrogata</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>immatricolazione_key</name>
+        <rename>tipo_immatricolazione</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>784</xloc>
-      <yloc>1088</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>rimozione del 998 o no&#x3f;</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1072</xloc>
-      <yloc>1184</yloc>
+      <xloc>1152</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

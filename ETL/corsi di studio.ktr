@@ -561,7 +561,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_TIPO_LAUREA.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;CODICI_TIPO_LAUREA.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -617,7 +617,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;A7_corsi_completi_20160312_v01.dat</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;A7_corsi_completi_20160312_v01.dat</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -849,7 +849,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_1_20160127_143031.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_1_20160127_143031.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1257,7 +1257,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_1_20160127_120000.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_1_20160127_120000.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1665,7 +1665,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_1_20160127_153020.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_1_20160127_153020.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2073,7 +2073,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_6_20160129_110238.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2012_6_20160129_110238.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2305,7 +2305,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_6_20160129_121124.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2013_6_20160129_121124.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2537,7 +2537,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_6_20160224_134831.out.TXT</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;WS_ZIP_A7_2014_6_20160224_134831.out.TXT</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2858,7 +2858,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;a7.csv</filename>
+    <filename>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;a7.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -3007,7 +3007,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Tano&#x5c;OneDrive&#x5c;Basi di Dati II&#x5c;HW DWH&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;a7.xlsx</name>
+      <name>D&#x3a;&#x5c;GitHub&#x5c;AVAProject&#x5c;dati_ans&#x5c;ans_anonimizzata&#x5c;CODICI_GENERALI&#x5c;a7.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
