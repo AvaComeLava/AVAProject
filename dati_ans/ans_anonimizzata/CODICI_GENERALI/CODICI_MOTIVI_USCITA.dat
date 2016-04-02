@@ -1,0 +1,11 @@
+ID_MOTIVO;DESCRIZIONE;
+L;Laurea;
+R;Rinuncia;
+D;Decadenza;
+M;Decesso;
+I;Rinuncia implicita;
+P;Prosecuzione carriera all'estero;
+A;Passaggio a corso ante riforma;
+N;Prosecuzione carriera in struttura non gestita;
+C;Chiusura carriera per irregolarità amministrative;
+T;Chiusura per passaggio a corso riformato;

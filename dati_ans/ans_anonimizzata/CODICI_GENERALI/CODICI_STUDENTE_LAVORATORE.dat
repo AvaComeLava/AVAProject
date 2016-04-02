@@ -1,0 +1,10 @@
+ID_TIPO;DESCRIZIONE;
+N;Non lavoratore  (studente >75%);
+L;Lavoratore Studente (studente <50%);
+S;Studente Lavoratore (studente 50%<t<75%);
+1;Sì Full Time (Modalità consentita da a.a.2014/15);
+0;No Full Time (Modalità consentita da a.a.2014/15);
+2;No Part Time (Modalità consentita da a.a.2014/15);
+3;Sì Part Time (Modalità consentita da a.a.2014/15);
+8;Non fornito Part Time (Modalità consentita da a.a.2014/15);
+9;Non fornito  Full Time (Modalità consentita da a.a.2014/15);

@@ -1,0 +1,11 @@
+ID_ATTIVITA;DESCRIZIONE ATTIVITA;
+LEZ;Lezioni;
+SEM;Seminari;
+LAB;Laboratori;
+ESE;Esercitazioni;
+PRF;Prova Finale;
+STA;Stage o Tirocini;
+STI;Stage o Tirocini (interni);
+STE;Stage o Tirocini (estero);
+999;Non Fornito;
+STU;Studio Individuale;

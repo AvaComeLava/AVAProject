@@ -1,0 +1,15 @@
+ID_MOTIVO_SOSPENSIONE;DESCRIZIONE;
+MAT;Maternita;
+MIL;Servizio di Leva;
+DOT;Dottorato di Ricerca;
+MAL;Malattia;
+DIS;Sanzione Disciplinare;
+MAS;Master;
+ALT;Altro Motivo;
+SER;Servizio Civile;
+FAM;Motivi Familiari;
+STU;Conclusione Studi Pregressi;
+TFA;sospensione per TFA;
+PAS;sospensione per PAS;
+998;Nessuna Sospensione;
+999;Non Fornito;

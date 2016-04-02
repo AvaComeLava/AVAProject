@@ -1,0 +1,11 @@
+ID_TIPO_ISCRIZIONE;DESCRIZIONE;
+IA;Iscrizione annuale;
+PC;Passaggio di corso;
+PO;Variazione dell'Anno Accademico di Regolamento (passaggio di ordinamento);
+RI;Ricognizione;
+SO;Sospensione;
+TI;Trasferimento in ingresso;
+TU;Trasferimento in uscita;
+VC;Variazione del curriculum, dopo aver già effettuato una prima scelta;
+VI;Variazione di classe (corsi interclasse);
+VS;Variazione di sede;

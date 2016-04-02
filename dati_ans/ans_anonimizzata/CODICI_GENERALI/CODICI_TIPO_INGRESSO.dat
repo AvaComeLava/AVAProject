@@ -1,0 +1,8 @@
+ID_TIPO_INGRESSO;DESCRIZIONE;
+N;Nuova Immatricolazione;
+E;Equipollenza (Riconoscimento di Studi Esteri);
+R;Reimmatricolazione in Seguito a Rinuncia Presso Altro Ateneo;
+D;Reimmatricolazione in Seguito a Decadenza Presso Altro Ateneo;
+P;Prosecuzione di Carriera (3+2);
+O;Avvio Nuova Carriera per Opzione Corso Ante-Riforma;
+T;Trasferimento o Prosecuzione carriera da Ateneo Estero;

@@ -1,0 +1,6 @@
+ID_TIPO_INVIO;DESCRIZIONE;
+N;Nuovo Invio;
+E;Eliminazione;
+C;Correzione;
+R;Reinvio Totale;
+S;Sostituzione;
