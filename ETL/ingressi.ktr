@@ -119,7 +119,8 @@
   <hop> <from>Database lookup anno accademico</from><to>Database lookup cds</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup tempo</from><to>Database lookup tipo immatricolazione</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup tipo immatricolazione</from><to>immatricolato &#x28;sempre 1&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro tipo immatricolazione non null</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro tipo immatricolazione non null</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Database lookup anno accademico</name>
@@ -2072,7 +2073,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Unique rows &#x28;HashSet&#x29;</send_true_to>
+<send_true_to>Sort rows</send_true_to>
 <send_false_to/>
     <compare>
 <condition>
@@ -2153,6 +2154,52 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>416</xloc>
       <yloc>240</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>studente</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>corso_di_studi</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>anno_accademico</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>640</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

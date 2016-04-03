@@ -136,7 +136,6 @@
   <hop> <from>aggiunta mesi ad anno inizio&#x2f;fine validit&#xe0;</from><to>ddMMyyyy</to><enabled>Y</enabled> </hop>
   <hop> <from>ddMMyyyy</from><to>Aggiungi ID CORSO</to><enabled>Y</enabled> </hop>
   <hop> <from>Filtro valori inutili 2</from><to>Dummy &#x28;do nothing&#x29; 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Dummy &#x28;do nothing&#x29; 3</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Filtro valori inutili</from><to>Dummy &#x28;do nothing&#x29; 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Import Spedizione 1 2012</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Import Spedizione 1 2013</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
@@ -156,6 +155,8 @@
   <hop> <from>conversione string -&#x3e; int</from><to>Add sequence</to><enabled>Y</enabled> </hop>
   <hop> <from>Add sequence</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 3</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add sequence</name>
@@ -3865,6 +3866,40 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>880</xloc>
       <yloc>816</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Chiave corso</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>672</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
