@@ -107,7 +107,7 @@
   <hop> <from>data int to string</from><to>padding data</to><enabled>Y</enabled> </hop>
   <hop> <from>padding data</from><to>filtro evento IN, AC, IS</to><enabled>Y</enabled> </hop>
   <hop> <from>Selezione dati utili</from><to>filtro tempo non null</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Insert &#x2f; Update</to><enabled>N</enabled> </hop>
+  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro cds non null</from><to>filtro anno accademico non null</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro tempo non null</from><to>filtro cds non null</to><enabled>Y</enabled> </hop>
   <hop> <from>immatricolato &#x28;sempre 1&#x29;</from><to>Selezione dati utili</to><enabled>Y</enabled> </hop>
