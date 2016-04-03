@@ -61,11 +61,10 @@ INSERT INTO corso_di_studi (codice_cds, nome_cds)
     VALUES (0, '---');
 
 CREATE TABLE tipo_iscrizione (
-  iscrizione_key SERIAL PRIMARY KEY NOT NULL,
-  tipo_iscrizione VARCHAR(50),
-  in_corso BOOLEAN,
-  anno_corso SMALLINT,
-  numero_anni_fc SMALLINT
+    iscrizione_key SERIAL PRIMARY KEY NOT NULL,
+    fuori_corso SMALLINT,
+    anno_corso SMALLINT,
+    numero_anni_fc SMALLINT
 );
 
 CREATE TABLE corso (
@@ -109,6 +108,7 @@ CREATE TABLE tipo_copertura (
 
 CREATE TABLE tipo_uscita (
   tipo_uscita_key SERIAL PRIMARY KEY NOT NULL,
+  tipo_uscita_key_surrogata VARCHAR(2),
   tipo_uscita VARCHAR(70)
 );
 

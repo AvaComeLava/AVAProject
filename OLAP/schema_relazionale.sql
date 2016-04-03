@@ -877,8 +877,7 @@ ALTER SEQUENCE tipo_immatricolazione_immatricolazione_key_seq OWNED BY tipo_imma
 
 CREATE TABLE tipo_iscrizione (
     iscrizione_key integer NOT NULL,
-    tipo_iscrizione character varying(50),
-    in_corso boolean,
+    fuori_corso smallint,
     anno_corso smallint,
     numero_anni_fc smallint
 );
@@ -917,6 +916,7 @@ ALTER SEQUENCE tipo_iscrizione_iscrizione_key_seq OWNED BY tipo_iscrizione.iscri
 
 CREATE TABLE tipo_uscita (
     tipo_uscita_key integer NOT NULL,
+	tipo_uscita_key_surrogata character varying(2),
     tipo_uscita character varying(70)
 );
 
