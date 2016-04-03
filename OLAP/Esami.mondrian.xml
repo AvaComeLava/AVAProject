@@ -1,15 +1,5 @@
 <Schema name="Esami">
   <Dimension name="Anno accademico">
-    <Hierarchy name="Aa key" hasAll="true" primaryKey="aa_key">
-      <Table name="anno_accademico" schema="ava"/>
-      <Level name="Aa key" uniqueMembers="false" column="aa_key" type="Numeric">
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="Codice anno" hasAll="true" primaryKey="aa_key">
-      <Table name="anno_accademico" schema="ava"/>
-      <Level name="Codice anno" uniqueMembers="false" column="codice_anno" type="Numeric">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Nome anno x" hasAll="true" primaryKey="aa_key">
       <Table name="anno_accademico" schema="ava"/>
       <Level name="Nome anno x" uniqueMembers="false" column="nome_anno_x" type="String">
@@ -32,16 +22,6 @@
       <Level name="Cfu corso" uniqueMembers="false" column="cfu_corso" type="Numeric">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Codice corso" hasAll="true" primaryKey="corso_key">
-      <Table name="corso" schema="ava"/>
-      <Level name="Codice corso" uniqueMembers="false" column="codice_corso" type="String">
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="Corso key" hasAll="true" primaryKey="corso_key">
-      <Table name="corso" schema="ava"/>
-      <Level name="Corso key" uniqueMembers="false" column="corso_key" type="Numeric">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Nome corso" hasAll="true" primaryKey="corso_key">
       <Table name="corso" schema="ava"/>
       <Level name="Nome corso" uniqueMembers="false" column="nome_corso" type="String">
@@ -54,19 +34,9 @@
     </Hierarchy>
   </Dimension>
   <Dimension name="Corso di studi">
-    <Hierarchy name="Cds key" hasAll="true" primaryKey="cds_key">
-      <Table name="corso_di_studi" schema="ava"/>
-      <Level name="Cds key" uniqueMembers="false" column="cds_key" type="Numeric">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Codice ateneo" hasAll="true" primaryKey="cds_key">
       <Table name="corso_di_studi" schema="ava"/>
       <Level name="Codice ateneo" uniqueMembers="false" column="codice_ateneo" type="String">
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="Codice cds" hasAll="true" primaryKey="cds_key">
-      <Table name="corso_di_studi" schema="ava"/>
-      <Level name="Codice cds" uniqueMembers="false" column="codice_cds" type="Numeric">
       </Level>
     </Hierarchy>
     <Hierarchy name="Codice dipartimento" hasAll="true" primaryKey="cds_key">
@@ -166,11 +136,6 @@
       <Level name="Stato residenza" uniqueMembers="false" column="stato_residenza" type="String">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Studente key" hasAll="true" primaryKey="studente_key">
-      <Table name="studente" schema="ava"/>
-      <Level name="Studente key" uniqueMembers="false" column="studente_key" type="Numeric">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Tipo scuola media superiore" hasAll="true" primaryKey="studente_key">
       <Table name="studente" schema="ava"/>
       <Level name="Tipo scuola media superiore" uniqueMembers="false" column="tipo_scuola_media_superiore" type="String">
@@ -191,11 +156,6 @@
     <Hierarchy name="Americanholiday" hasAll="true" primaryKey="tempo_key">
       <Table name="tempo" schema="ava"/>
       <Level name="Americanholiday" uniqueMembers="false" column="americanholiday" type="String">
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="Anno" hasAll="true" primaryKey="tempo_key">
-      <Table name="tempo" schema="ava"/>
-      <Level name="Anno" uniqueMembers="false" column="anno" type="Date">
       </Level>
     </Hierarchy>
     <Hierarchy name="Austrianholiday" hasAll="true" primaryKey="tempo_key">
@@ -248,16 +208,6 @@
       <Level name="Formatteddate" uniqueMembers="false" column="formatteddate" type="String">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Giorno" hasAll="true" primaryKey="tempo_key">
-      <Table name="tempo" schema="ava"/>
-      <Level name="Giorno" uniqueMembers="false" column="giorno" type="Date">
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="Mese" hasAll="true" primaryKey="tempo_key">
-      <Table name="tempo" schema="ava"/>
-      <Level name="Mese" uniqueMembers="false" column="mese" type="Date">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Month" hasAll="true" primaryKey="tempo_key">
       <Table name="tempo" schema="ava"/>
       <Level name="Month" uniqueMembers="false" column="month" type="Numeric">
@@ -293,11 +243,6 @@
       <Level name="Quartal" uniqueMembers="false" column="quartal" type="String">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Tempo key" hasAll="true" primaryKey="tempo_key">
-      <Table name="tempo" schema="ava"/>
-      <Level name="Tempo key" uniqueMembers="false" column="tempo_key" type="Numeric">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Weekdayname" hasAll="true" primaryKey="tempo_key">
       <Table name="tempo" schema="ava"/>
       <Level name="Weekdayname" uniqueMembers="false" column="weekdayname" type="String">
@@ -331,6 +276,15 @@
     <Hierarchy name="Yearquartal" hasAll="true" primaryKey="tempo_key">
       <Table name="tempo" schema="ava"/>
       <Level name="Yearquartal" uniqueMembers="false" column="yearquartal" type="String">
+      </Level>
+    </Hierarchy>
+    <Hierarchy hasAll="true" primaryKey="tempo_key">
+      <Table name="tempo" schema="ava"/>
+      <Level name="Anno" uniqueMembers="false" column="anno" type="Date">
+      </Level>
+      <Level name="Mese" uniqueMembers="false" column="mese" type="Date">
+      </Level>
+      <Level name="Giorno" uniqueMembers="false" column="giorno" type="Date">
       </Level>
     </Hierarchy>
   </Dimension>
