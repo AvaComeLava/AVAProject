@@ -101,6 +101,7 @@
     </attributes>
   </connection>
   <order>
+  <hop> <from>Add sequence</from><to>Sort rows 2</to><enabled>N</enabled> </hop>
   <hop> <from>Import Codici Settori Disciplinari</from><to>Aggiungi SSD</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Aggiungi SSD</to><enabled>Y</enabled> </hop>
   <hop> <from>Aggiungi SSD</from><to>Aggiungi nome corso</to><enabled>Y</enabled> </hop>
@@ -113,8 +114,11 @@
   <hop> <from>Import Spedizione 6 2014</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Filtro valori inutili</to><enabled>Y</enabled> </hop>
   <hop> <from>Elimino Valori Inutili e Rinomino</from><to>Add sequence</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filtro valori inutili</from><to>Sort rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filtro valori inutili</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows 2</from><to>Unique rows</to><enabled>N</enabled> </hop>
+  <hop> <from>Unique rows</from><to>Insert &#x2f; Update</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>Add sequence</name>
@@ -1285,26 +1289,44 @@
     </step>
 
   <step>
-    <name>Unique rows &#x28;HashSet&#x29;</name>
-    <type>UniqueRowsByHashSet</type>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <store_values>N</store_values>
-      <reject_duplicate_row>N</reject_duplicate_row>
-      <error_description/>
-    <fields>      <field>        <name>Settore scientifico&#x2f;disciplinare</name>
-        </field>      <field>        <name>Numero CFU</name>
-        </field>      <field>        <name>Codice Esame</name>
-        </field>      </fields>     <cluster_schema/>
+    <fields>
+      <field>
+        <in_stream_name>Settore scientifico&#x2f;disciplinare</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>999999999999999</replace_string>
+        <replace_by_string>NN</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Settore scientifico&#x2f;disciplinare</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>999999999999996</replace_string>
+        <replace_by_string>NN</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>544</xloc>
-      <yloc>400</yloc>
+      <xloc>752</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1351,6 +1373,98 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>640</xloc>
       <yloc>352</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>nome_corso</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>codice_corso</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>nome_corso</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      <field>        <name>codice_corso</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1040</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows &#x28;HashSet&#x29;</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>N</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>Settore scientifico&#x2f;disciplinare</name>
+        </field>      <field>        <name>Numero CFU</name>
+        </field>      <field>        <name>Codice Esame</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>544</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

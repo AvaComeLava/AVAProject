@@ -227,7 +227,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>304</xloc>
-      <yloc>368</yloc>
+      <yloc>352</yloc>
       </entry>
     <entry>
       <name>Trasformazione Corsi di Studio</name>
@@ -260,7 +260,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>304</xloc>
-      <yloc>448</yloc>
+      <yloc>432</yloc>
       </entry>
     <entry>
       <name>Trasformazione Tipi Iscrizione</name>
@@ -293,7 +293,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>304</xloc>
-      <yloc>528</yloc>
+      <yloc>512</yloc>
       </entry>
     <entry>
       <name>Trasformazione Tipi Uscita</name>
@@ -326,7 +326,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>304</xloc>
-      <yloc>624</yloc>
+      <yloc>608</yloc>
       </entry>
   </entries>
   <hops>

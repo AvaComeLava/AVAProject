@@ -101,6 +101,7 @@
     </attributes>
   </connection>
   <order>
+  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Insert &#x2f; Update</to><enabled>N</enabled> </hop>
   <hop> <from>Dati utili e conversione date</from><to>padding data</to><enabled>Y</enabled> </hop>
   <hop> <from>Import Spedizione 6 2012</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Import Spedizione 6 2013</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
@@ -109,7 +110,6 @@
   <hop> <from>filtro tempo non null</from><to>filtro cds non null</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro cds non null</from><to>filtro corso non null</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro corso non null</from><to>filtro anno accademico non null</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   <hop> <from>Selezione dati utili</from><to>filtro tempo non null</to><enabled>Y</enabled> </hop>
   <hop> <from>padding data</from><to>Filtro evento CD</to><enabled>Y</enabled> </hop>
   <hop> <from>Filtro evento CD</from><to>filtro tipo valore C</to><enabled>Y</enabled> </hop>
@@ -120,8 +120,10 @@
   <hop> <from>Database lookup corso</from><to>Database lookup cds</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup cds</from><to>Database lookup tempo</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup tempo</from><to>Selezione dati utili</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro anno accademico non null</from><to>Sort rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>N</enabled> </hop>
+  <hop> <from>filtro anno accademico non null</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Sort rows</to><enabled>N</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Database lookup anno accademico</name>
@@ -1244,8 +1246,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>640</xloc>
-      <yloc>704</yloc>
+      <xloc>464</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1318,8 +1320,60 @@
         </field>      <field>        <name>cfu_acquisiti</name>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>640</xloc>
+      <xloc>464</xloc>
       <yloc>592</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>studente</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>anno_accademico</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>corso</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>cfu_acquisiti</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>560</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1335,7 +1389,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Sort rows</send_true_to>
+<send_true_to>Dummy &#x28;do nothing&#x29; 2</send_true_to>
 <send_false_to/>
     <compare>
 <condition>
@@ -1533,53 +1587,20 @@
     </step>
 
   <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>studente</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>anno_accademico</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>corso</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>cfu_acquisiti</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
-    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>720</xloc>
-      <yloc>576</yloc>
+      <xloc>656</xloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
