@@ -111,11 +111,11 @@
   <hop> <from>filtro cds non null</from><to>filtro corso non null</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro corso non null</from><to>filtro anno accademico non null</to><enabled>Y</enabled> </hop>
   <hop> <from>Selezione dati utili</from><to>filtro tempo non null</to><enabled>Y</enabled> </hop>
-  <hop> <from>padding data</from><to>Filtro evento CD</to><enabled>Y</enabled> </hop>
+  <hop> <from>padding data</from><to>Filtro evento CD</to><enabled>N</enabled> </hop>
   <hop> <from>Filtro evento CD</from><to>filtro tipo valore C</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro tipo valore C</from><to>Database lookup studente</to><enabled>Y</enabled> </hop>
-  <hop> <from>Database lookup studente</from><to>filtro studente non null</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro studente non null</from><to>Database lookup anno accademico</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup studente</from><to>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</from><to>Database lookup anno accademico</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup anno accademico</from><to>Database lookup corso</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup corso</from><to>Database lookup cds</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup cds</from><to>Database lookup tempo</to><enabled>Y</enabled> </hop>
@@ -124,6 +124,8 @@
   <hop> <from>filtro anno accademico non null</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Sort rows</to><enabled>N</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
+  <hop> <from>padding data</from><to>Filtro evento LEZ</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filtro evento LEZ</from><to>Filtro evento CD</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Database lookup anno accademico</name>
@@ -145,7 +147,7 @@
       <table>anno_accademico</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Anno solare</name>
         <field>nome_anno_x_1</field>
@@ -187,7 +189,7 @@
       <table>corso_di_studi</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Chiave corso</name>
         <field>codice_cds</field>
@@ -229,7 +231,7 @@
       <table>corso</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Codice Esame</name>
         <field>codice_corso</field>
@@ -277,7 +279,7 @@
       <table>studente</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Codice fiscale evento</name>
         <field>codice_fiscale</field>
@@ -319,7 +321,7 @@
       <table>tempo</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Data Evento</name>
         <field>pentahodate</field>
@@ -384,6 +386,10 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>Tipo attivit&#xe0;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>Data Evento</name>
         <rename>Data Evento</rename>
@@ -438,6 +444,25 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>240</xloc>
       <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>656</xloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1301,32 +1326,6 @@
     </step>
 
   <step>
-    <name>Unique rows &#x28;HashSet&#x29;</name>
-    <type>UniqueRowsByHashSet</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <store_values>N</store_values>
-      <reject_duplicate_row>N</reject_duplicate_row>
-      <error_description/>
-    <fields>      <field>        <name>studente</name>
-        </field>      <field>        <name>anno_accademico</name>
-        </field>      <field>        <name>corso</name>
-        </field>      <field>        <name>cfu_acquisiti</name>
-        </field>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>464</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Sort rows</name>
     <type>SortRows</type>
     <description/>
@@ -1374,6 +1373,32 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>560</xloc>
       <yloc>576</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows &#x28;HashSet&#x29;</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>N</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>studente</name>
+        </field>      <field>        <name>anno_accademico</name>
+        </field>      <field>        <name>corso</name>
+        </field>      <field>        <name>cfu_acquisiti</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>464</xloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1466,7 +1491,7 @@
     </step>
 
   <step>
-    <name>filtro studente non null</name>
+    <name>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1488,7 +1513,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>816</xloc>
+      <xloc>880</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1587,20 +1612,30 @@
     </step>
 
   <step>
-    <name>Dummy &#x28;do nothing&#x29; 2</name>
-    <type>Dummy</type>
+    <name>Filtro evento LEZ</name>
+    <type>FilterRows</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
+<send_true_to>Filtro evento CD</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Tipo attivit&#xe0;</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>LEZ</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>656</xloc>
-      <yloc>592</yloc>
+      <xloc>480</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

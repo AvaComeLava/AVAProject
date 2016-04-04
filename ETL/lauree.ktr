@@ -75,8 +75,8 @@
   <notepads>
     <notepad>
       <note>Serve esprimere il voto anche in int dato che l&#x27;analisi prevede la media&#x3f; &#xd;&#xa;Tengo comunque la colonna originale per non perdere la lode</note>
-      <xloc>320</xloc>
-      <yloc>960</yloc>
+      <xloc>304</xloc>
+      <yloc>944</yloc>
       <width>387</width>
       <heigth>42</heigth>
       <fontname>Segoe UI</fontname>
@@ -138,8 +138,8 @@
   <hop> <from>Replace in string &#x28;tolgo L da voto&#x29;</from><to>conversione in int voto</to><enabled>Y</enabled> </hop>
   <hop> <from>conversione in int voto</from><to>Seleziono e rinomino</to><enabled>Y</enabled> </hop>
   <hop> <from>Seleziono e rinomino</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro studente non null 2</from><to>Database lookup anno accademico</to><enabled>Y</enabled> </hop>
-  <hop> <from>Database lookup studente</from><to>filtro studente non null 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</from><to>Database lookup anno accademico</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup studente</from><to>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup cds</from><to>Database lookup tempo</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro evento laurea L</from><to>Database lookup studente</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup anno accademico</from><to>Database lookup cds</to><enabled>Y</enabled> </hop>
@@ -225,7 +225,7 @@
       <table>anno_accademico</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Anno accademico</name>
         <field>nome_anno_x_1</field>
@@ -267,7 +267,7 @@
       <table>corso_di_studi</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Chiave corso</name>
         <field>codice_cds</field>
@@ -309,7 +309,7 @@
       <table>studente</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Codice fiscale</name>
         <field>codice_fiscale</field>
@@ -351,7 +351,7 @@
       <table>tempo</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
+      <eat_row_on_failure>Y</eat_row_on_failure>
       <key>
         <name>Data evento</name>
         <field>pentahodate</field>
@@ -388,6 +388,25 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>352</xloc>
       <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1072</xloc>
+      <yloc>848</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1260,7 +1279,7 @@
     </step>
 
   <step>
-    <name>filtro studente non null 2</name>
+    <name>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1282,7 +1301,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>928</xloc>
+      <xloc>992</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1375,25 +1394,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1056</xloc>
       <yloc>624</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29; 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1072</xloc>
-      <yloc>848</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
