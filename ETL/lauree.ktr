@@ -129,25 +129,27 @@
   <hop> <from>padding data</from><to>filtro evento laurea L</to><enabled>Y</enabled> </hop>
   <hop> <from>selezione e conversione</from><to>Voto Lookup</to><enabled>Y</enabled> </hop>
   <hop> <from>CSV file input CODICI_VOTI_LAUREA</from><to>selezione e conversione</to><enabled>Y</enabled> </hop>
-  <hop> <from>Selezione dati utili</from><to>filtro tempo non null</to><enabled>Y</enabled> </hop>
+  <hop> <from>Selezione dati utili</from><to>filtro tempo non null</to><enabled>N</enabled> </hop>
   <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Insert &#x2f; Update</to><enabled>N</enabled> </hop>
-  <hop> <from>filtro tempo non null</from><to>filtro cds non null</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro tempo non null</from><to>filtro cds non null</to><enabled>N</enabled> </hop>
   <hop> <from>Voto Lookup</from><to>Selezione dati utili</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro cds non null</from><to>filtro anno accademico non null</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro cds non null</from><to>filtro anno accademico non null</to><enabled>N</enabled> </hop>
   <hop> <from>Unique rows &#x28;HashSet&#x29;</from><to>Replace in string &#x28;tolgo L da voto&#x29;</to><enabled>N</enabled> </hop>
   <hop> <from>Replace in string &#x28;tolgo L da voto&#x29;</from><to>conversione in int voto</to><enabled>Y</enabled> </hop>
   <hop> <from>conversione in int voto</from><to>Seleziono e rinomino</to><enabled>Y</enabled> </hop>
   <hop> <from>Seleziono e rinomino</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
-  <hop> <from>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</from><to>Database lookup anno accademico</to><enabled>Y</enabled> </hop>
-  <hop> <from>Database lookup studente</from><to>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</from><to>Database lookup anno accademico</to><enabled>N</enabled> </hop>
+  <hop> <from>Database lookup studente</from><to>filtro studente non null &#x28;superfluo, gestito da lookup&#x29;</to><enabled>N</enabled> </hop>
   <hop> <from>Database lookup cds</from><to>Database lookup tempo</to><enabled>Y</enabled> </hop>
   <hop> <from>filtro evento laurea L</from><to>Database lookup studente</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup anno accademico</from><to>Database lookup cds</to><enabled>Y</enabled> </hop>
   <hop> <from>Database lookup tempo</from><to>Voto Lookup</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows</from><to>Unique rows &#x28;HashSet&#x29;</to><enabled>N</enabled> </hop>
-  <hop> <from>filtro anno accademico non null</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>filtro anno accademico non null</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>N</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Sort rows</to><enabled>N</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29; 2</from><to>Replace in string &#x28;tolgo L da voto&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup studente</from><to>Database lookup anno accademico</to><enabled>Y</enabled> </hop>
+  <hop> <from>Selezione dati utili</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>CSV file input CODICI_VOTI_LAUREA</name>
@@ -881,7 +883,7 @@
     <name>Selezione dati utili</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
