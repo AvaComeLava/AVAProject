@@ -277,10 +277,6 @@
     <DimensionUsage name="Corso di studi" source="Corso di studi" foreignKey="corso_di_studi"/>
     <DimensionUsage name="Studente" source="Studente" foreignKey="studente"/>
     <DimensionUsage name="Tempo" source="Tempo" foreignKey="tempo"/>
-    <Measure name="Anno accademico" column="anno_accademico" aggregator="sum" formatString="&#x23;"/>
-    <Measure name="Corso di studi" column="corso_di_studi" aggregator="sum" formatString="&#x23;"/>
-    <Measure name="Studente" column="studente" aggregator="sum" formatString="&#x23;"/>
-    <Measure name="Tempo" column="tempo" aggregator="sum" formatString="&#x23;"/>
     <Measure name="Voto laurea" column="voto_laurea" aggregator="avg" formatString="&#x23;,&#x23;&#x23;&#x23;&#x3b;&#x28;&#x23;,&#x23;&#x23;&#x23;&#x29;"/>
     <Measure name="Voto laurea formatted" column="voto_laurea_formatted" aggregator="distinct count" formatString="Standard"/>
   </Cube>

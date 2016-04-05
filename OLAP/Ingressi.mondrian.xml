@@ -285,12 +285,7 @@
     <DimensionUsage name="Studente" source="Studente" foreignKey="studente"/>
     <DimensionUsage name="Tempo" source="Tempo" foreignKey="tempo"/>
     <DimensionUsage name="Tipo immatricolazione" source="Tipo immatricolazione" foreignKey="tipo_immatricolazione"/>
-    <Measure name="Anno accademico" column="anno_accademico" aggregator="sum" formatString="&#x23;"/>
-    <Measure name="Corso di studi" column="corso_di_studi" aggregator="sum" formatString="&#x23;"/>
     <Measure name="Immatricolato" column="immatricolato" aggregator="sum" formatString="&#x23;"/>
     <Measure name="Punteggio test" column="punteggio_test" aggregator="avg" formatString="&#x23;,&#x23;&#x23;&#x23;&#x3b;&#x28;&#x23;,&#x23;&#x23;&#x23;&#x29;"/>
-    <Measure name="Studente" column="studente" aggregator="sum" formatString="&#x23;"/>
-    <Measure name="Tempo" column="tempo" aggregator="sum" formatString="&#x23;"/>
-    <Measure name="Tipo immatricolazione" column="tipo_immatricolazione" aggregator="sum" formatString="&#x23;"/>
   </Cube>
 </Schema>
