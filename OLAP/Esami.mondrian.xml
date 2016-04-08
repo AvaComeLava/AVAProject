@@ -116,24 +116,32 @@
       <Level name="Nazione diploma" uniqueMembers="false" column="nazione_diploma" type="String">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Provincia residenza" hasAll="true" primaryKey="studente_key">
-      <Table name="studente" schema="ava"/>
-      <Level name="Provincia residenza" uniqueMembers="false" column="provincia_residenza" type="String">
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="Regione residenza" hasAll="true" primaryKey="studente_key">
-      <Table name="studente" schema="ava"/>
-      <Level name="Regione residenza" uniqueMembers="false" column="regione_residenza" type="String">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Sesso" hasAll="true" primaryKey="studente_key">
       <Table name="studente" schema="ava"/>
       <Level name="Sesso" uniqueMembers="false" column="sesso" type="String">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Stato residenza" hasAll="true" primaryKey="studente_key">
+    <Hierarchy name="Residenza" hasAll="true" primaryKey="studente_key">
       <Table name="studente" schema="ava"/>
       <Level name="Stato residenza" uniqueMembers="false" column="stato_residenza" type="String">
+        <Annotations>
+          <Annotation name="Data.Role">Geography</Annotation>
+          <Annotation name="Geo.Role">country</Annotation>
+        </Annotations>
+      </Level>
+      <Level name="Regione residenza" uniqueMembers="false" column="regione_residenza" type="String">
+        <Annotations>
+          <Annotation name="Data.Role">Geography</Annotation>
+          <Annotation name="Geo.Role">state</Annotation>
+          <Annotation name="Geo.RequiredParents">country</Annotation>
+        </Annotations>
+      </Level>
+      <Level name="Provincia residenza" uniqueMembers="false" column="provincia_residenza" type="String">
+        <Annotations>
+          <Annotation name="Data.Role">Geography</Annotation>
+          <Annotation name="Geo.Role">city</Annotation>
+          <Annotation name="Geo.RequiredParents">country,state</Annotation>
+        </Annotations>
       </Level>
     </Hierarchy>
     <Hierarchy name="Tipo scuola media superiore" hasAll="true" primaryKey="studente_key">
@@ -295,7 +303,7 @@
     <DimensionUsage name="Corso di studi" source="Corso di studi" foreignKey="corso_di_studi"/>
     <DimensionUsage name="Studente" source="Studente" foreignKey="studente"/>
     <DimensionUsage name="Tempo" source="Tempo" foreignKey="tempo"/>
-    <Measure name="Cfu acquisiti" column="cfu_acquisiti" aggregator="sum" formatString="&#x23;"/>
+    <Measure name="Cfu acquisiti" column="cfu_acquisiti" aggregator="distinct count" formatString="&#x23;"/>
     <Measure name="Voto" column="voto" aggregator="avg" formatString="&#x23;,&#x23;&#x23;&#x23;&#x3b;&#x28;&#x23;,&#x23;&#x23;&#x23;&#x29;"/>
   </Cube>
 </Schema>
